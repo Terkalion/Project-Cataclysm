@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=7 format=3 uid="uid://1bsnteka4j74"]
+
+[ext_resource type="Script" uid="uid://b8pt4buw614s3" path="res://scripts/content/move_resource.gd" id="1_5ivg0"]
+[ext_resource type="Script" uid="uid://cv01tthnwd0x0" path="res://scripts/avfx/avfx_resources/avfx_resource.gd" id="2_ifxfc"]
+[ext_resource type="Script" uid="uid://bhfvilpyv4h4s" path="res://scripts/content/targeted_effects/targeted_effects.gd" id="2_rrpar"]
+[ext_resource type="Script" uid="uid://bnmjm4hngkidv" path="res://scripts/content/targeted_effects/add_condition.gd" id="3_rrpar"]
+[ext_resource type="Resource" uid="uid://bt62wqswu3bju" path="res://scripts/content/conditions/attack_boost.tres" id="3_v6vws"]
+
+[sub_resource type="Resource" id="Resource_v6vws"]
+script = ExtResource("3_rrpar")
+condition_resource = ExtResource("3_v6vws")
+outcome_filter = 2
+target_self = true
+metadata/_custom_type_script = "uid://bnmjm4hngkidv"
+
+[resource]
+script = ExtResource("1_5ivg0")
+name = "Knife Dance"
+max_usage = 15
+use_effects = Array[ExtResource("2_rrpar")]([SubResource("Resource_v6vws")])
+base_accuracy = 1.0
+metadata/_custom_type_script = "uid://b8pt4buw614s3"

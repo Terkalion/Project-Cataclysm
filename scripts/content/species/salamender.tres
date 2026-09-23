@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpeciesResources" load_steps=8 format=3 uid="uid://bnqqctkn2oucf"]
+
+[ext_resource type="Texture2D" uid="uid://cvro04fgav35p" path="res://assets/art/monsters/salamander.png" id="1_tje53"]
+[ext_resource type="Script" uid="uid://f3bmrgg8ycjr" path="res://scripts/content/species_resources.gd" id="2_i6tn2"]
+[ext_resource type="Script" uid="uid://b8pt4buw614s3" path="res://scripts/content/move_resource.gd" id="3_xx70x"]
+[ext_resource type="Resource" uid="uid://kohte8q6ueii" path="res://scripts/content/moves/torch.tres" id="5_epukv"]
+[ext_resource type="Resource" uid="uid://c100qf6fvxtvy" path="res://scripts/content/moves/regenerate.tres" id="6_ff3ii"]
+[ext_resource type="Resource" uid="uid://1egw374wg267" path="res://scripts/content/moves/paralyzing_sting.tres" id="7_tje53"]
+[ext_resource type="Resource" uid="uid://1bsnteka4j74" path="res://scripts/content/moves/knife_dance.tres" id="7_xrvj1"]
+
+[resource]
+script = ExtResource("2_i6tn2")
+image = ExtResource("1_tje53")
+name = "Salamander"
+starter_move = Array[ExtResource("3_xx70x")]([ExtResource("5_epukv"), ExtResource("6_ff3ii"), ExtResource("7_xrvj1"), ExtResource("7_tje53")])
+type = 3
+base_max_hp = 20
+base_attack = 7
+base_defence = 3
+base_speed = 5
+metadata/_custom_type_script = "uid://f3bmrgg8ycjr"

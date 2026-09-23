@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=10 format=3 uid="uid://cypbn5j2yx36o"]
+
+[ext_resource type="Script" uid="uid://b8pt4buw614s3" path="res://scripts/content/move_resource.gd" id="1_elx7e"]
+[ext_resource type="Script" uid="uid://cv01tthnwd0x0" path="res://scripts/avfx/avfx_resources/avfx_resource.gd" id="2_ru1xr"]
+[ext_resource type="Script" uid="uid://bhfvilpyv4h4s" path="res://scripts/content/targeted_effects/targeted_effects.gd" id="2_sbmci"]
+[ext_resource type="Script" uid="uid://bxl72h7cvlfm2" path="res://scripts/content/vector2_float.gd" id="3_ascrs"]
+[ext_resource type="Script" uid="uid://bkdjxoradugbj" path="res://scripts/content/targeted_effects/do_damage.gd" id="3_l2kj0"]
+[ext_resource type="Script" uid="uid://dwkoqpf7onjd" path="res://scripts/avfx/avfx_resources/asfx_move_monster.gd" id="4_3bbv1"]
+
+[sub_resource type="Resource" id="Resource_pahax"]
+script = ExtResource("3_ascrs")
+v2 = Vector2(20, 0)
+f = 0.5
+metadata/_custom_type_script = "uid://bxl72h7cvlfm2"
+
+[sub_resource type="Resource" id="Resource_3pe12"]
+script = ExtResource("4_3bbv1")
+offests_by_duration = Array[ExtResource("3_ascrs")]([SubResource("Resource_pahax")])
+target_self = true
+metadata/_custom_type_script = "uid://dwkoqpf7onjd"
+
+[sub_resource type="Resource" id="Resource_pxvql"]
+script = ExtResource("3_l2kj0")
+base_damage = 19
+metadata/_custom_type_script = "uid://bkdjxoradugbj"
+
+[resource]
+script = ExtResource("1_elx7e")
+name = "Smack"
+max_usage = 25
+use_effects = Array[ExtResource("2_sbmci")]([SubResource("Resource_pxvql")])
+base_accuracy = 1.0
+use_avfx = Array[ExtResource("2_ru1xr")]([SubResource("Resource_3pe12")])
+metadata/_custom_type_script = "uid://b8pt4buw614s3"

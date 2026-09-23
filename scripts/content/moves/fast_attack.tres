@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=14 format=3 uid="uid://bnb7n432pkkiu"]
+
+[ext_resource type="Script" uid="uid://b8pt4buw614s3" path="res://scripts/content/move_resource.gd" id="1_wwiep"]
+[ext_resource type="Script" uid="uid://cv01tthnwd0x0" path="res://scripts/avfx/avfx_resources/avfx_resource.gd" id="2_g4l7q"]
+[ext_resource type="Script" uid="uid://bhfvilpyv4h4s" path="res://scripts/content/targeted_effects/targeted_effects.gd" id="2_i160w"]
+[ext_resource type="Script" uid="uid://bkdjxoradugbj" path="res://scripts/content/targeted_effects/do_damage.gd" id="3_i160w"]
+[ext_resource type="AudioStream" uid="uid://ct00s14kfp6rs" path="res://assets/sound/Game_SFX_by_OwlishMedia/bounce.wav" id="3_loax8"]
+[ext_resource type="Script" uid="uid://4q7pfs7fx07d" path="res://scripts/avfx/avfx_resources/avfx_play_sfx.gd" id="4_o026h"]
+[ext_resource type="Script" uid="uid://bxl72h7cvlfm2" path="res://scripts/content/vector2_float.gd" id="5_o026h"]
+[ext_resource type="Script" uid="uid://dwkoqpf7onjd" path="res://scripts/avfx/avfx_resources/asfx_move_monster.gd" id="6_jxl8d"]
+
+[sub_resource type="Resource" id="Resource_jxl8d"]
+script = ExtResource("4_o026h")
+clip = ExtResource("3_loax8")
+metadata/_custom_type_script = "uid://4q7pfs7fx07d"
+
+[sub_resource type="Resource" id="Resource_xfid2"]
+script = ExtResource("5_o026h")
+v2 = Vector2(-30, 0)
+f = 0.05
+metadata/_custom_type_script = "uid://bxl72h7cvlfm2"
+
+[sub_resource type="Resource" id="Resource_r3ejb"]
+script = ExtResource("5_o026h")
+v2 = Vector2(25, 0)
+f = 0.15
+metadata/_custom_type_script = "uid://bxl72h7cvlfm2"
+
+[sub_resource type="Resource" id="Resource_aubbp"]
+script = ExtResource("6_jxl8d")
+offests_by_duration = Array[ExtResource("5_o026h")]([SubResource("Resource_xfid2"), SubResource("Resource_r3ejb")])
+target_self = true
+metadata/_custom_type_script = "uid://dwkoqpf7onjd"
+
+[sub_resource type="Resource" id="Resource_2xjmm"]
+script = ExtResource("3_i160w")
+base_damage = 10
+metadata/_custom_type_script = "uid://bkdjxoradugbj"
+
+[resource]
+script = ExtResource("1_wwiep")
+name = "Fast Attack"
+max_usage = 32
+use_effects = Array[ExtResource("2_i160w")]([SubResource("Resource_2xjmm")])
+base_accuracy = 1.0
+move_priority = 1
+use_avfx = Array[ExtResource("2_g4l7q")]([SubResource("Resource_jxl8d"), SubResource("Resource_aubbp")])
+metadata/_custom_type_script = "uid://b8pt4buw614s3"
